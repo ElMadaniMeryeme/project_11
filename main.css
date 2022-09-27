@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.switcher {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+.switcher li {
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #eee;
+  min-width: 105px;
+  text-align: center;
+  transition: 0.2s;
+}
+.switcher li.active,
+.switcher li:hover {
+  background-color: red;
+  color: white;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  margin: auto;
+}
+.gallery img {
+  margin-bottom: 10px;
+  transition: 0.3s;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+form {
+  width: 300px;
+  margin: 5px auto;
+  padding: 5px;
+}
+.fill {
+  margin: 20px auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: fit-content;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 1px #333;
+  position: relative;
+}
+.fill:before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-text-fill-color: #ff5722;
+  transition: 0.5s;
+  width: 0;
+  overflow: hidden;
+}
+.fill:hover:before {
+  width: 100%;
+}
+form > div {
+  padding: 5px 0;
+}
+form input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+form label {
+  position: relative;
+  padding-left: 25px;
+}
+form label::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 1px solid #0075ff;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+}
+form input[type="radio"]:checked + label::after,
+form input[type="radio"]:not(:checked):hover + label::after {
+  content: '';
+  background-color: #0075ff;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+}
+form input[type="radio"]:not(:checked):hover + label::after {
+  opacity: 0.2;
+}
+form input[type="radio"]:checked + label {
+  color: #0075ff;
+}
+.serial {
+  width: 200px;
+  padding: 20px;
+  background-color: #eee;
+  margin: 10px auto 0;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  height: 20px;
+}
+
+.generate {
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
+  background-color: #ff5722;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+}
+.generate:hover {
+  background-color: #f0440e;
+}
